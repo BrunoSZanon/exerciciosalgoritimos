@@ -20,7 +20,7 @@ int exercicio_tres(int ano){
 
     int idade = ano_atual - ano;
 
-    printf("sua idade é %d", idade);
+    printf("sua idade Ã© %d", idade);
 
     return 1;
 
