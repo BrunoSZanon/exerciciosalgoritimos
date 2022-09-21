@@ -1,19 +1,28 @@
-#include <stdio.h>
-#include <conio.h>
-#include <math.h>
+#include<stdio.h> #include<string.h> #include<conio.h>
+main(){
 
-int main()
+int l, c;
+char nomes[5][20], aux[20];
+
+for(l=0; l<5; l++){
+
+printf("Entre com os nomes:\n");
+gets(nomes[l]);
+}
+
+for(l=0; l<5; l++){
+for(c=l+1; c<5; c++){
+if(strcmp (nomes[l], nomes[c])>0)
 {
-    int i;
-    char nome[7];
-    printf("\n Informe o nome de uma pessoa com no maximo 7 letras: \n");
-    scanf("%s",nome);
+strcpy(aux, nomes[l]);
+strcpy(nomes[l], nomes[c]);
+strcpy(nomes[c], aux);
+}
+}
+}
 
-    for(i=0;i<7;i++){
-
-
-        printf("%c",nome[6-i]);
-    }
-    getch();
-    return 0;
+printf("Imprimindo o Vetor ordenado:\n");
+for(l=0; l<5; l++){
+puts(nomes[l]);
+}
 }
